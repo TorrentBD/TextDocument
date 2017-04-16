@@ -1,0 +1,50 @@
+Local server: 
+
+1. git --version  //version checking
+
+2. git init	        //initialize repository
+
+3.   git config --global user.name "Mituram" 	 //create account
+
+4. git config --global user.email "mituramray09@gmail.com"
+
+5.  git config --global user.name 	 //checking account
+
+6. touch text.txt 	//create a local file
+
+7. notepad text.txt     //opened by notepad
+
+8. git status	//check its status
+
+9. git add name.txt		//add as truncked file
+
+10. git add .		//all file
+
+11. git commit -m "message !"            //commit message 
+
+
+Branching:
+
+
+1. git branch banchName   //branch create
+
+2. git branch	          //brnch dekha
+
+3. git checkout banchname        //branch e probesh/branch poriborton
+
+4. same step to create file,commit as before i noticed
+
+5. ls -a		//how many file 
+
+6. git merge banchname	//master theke merge korte hobe
+
+
+On server:
+
+1. create a repository
+
+2. push code copy on console
+      ...login
+
+3. ok
+
