@@ -1,0 +1,196 @@
+open the project command prompt.....
+
+1.composer create-project --prefer-dist laravel/laravel NameOfPrject   (if not exist)
+
+2. php artisan serve         (run the your project)
+
+---------------------------------------------------------------
+
+.env file edit ???? ?? ?????? php artisan ??????? ?? ????????? ???? ???? ???? “php artisan config:clear” ?? command ?? run ???? ????
+
+-----------------------------------------------------------
+
+1. php artisan make:controller PhotoController       (create a controller )
+
+2. php artisan make:controller PhotoController --resource   (create a resource controller)
+
+------------------------------------------------------------------
+
+1. php artisan make:migration create_posts_table --create=posts     (posts name table create )
+
+2. php artisan migrate          (database a table gula add kora)
+
+3. php artisan migrate:rollback      (proyojone table rmove kora )
+
+4. php artisan migrate:refresh        (table delete hoye punoray create hobe)
+
+------------------------------------------------------------------------
+
+1. php artisan make:model Post       (model sorboda singular of table name)
+        --- Post define kore database a data insert kora jay
+
+2. php artisan tinker     ( a method to insert data database)
+     -------
+
+3.  php artisan make:seeder PostsTableSeeder   (an another method to insert data in database)
+     ----------
+    php artisan db:seed   (inserttion)
+
+    php artisan db:seed --class=UserTableSeeder   (specified inserttion)
+
+
+---------------------------------------------------------------------------
+1. php artisan make:middleware AgeMiddleware 		(create a middleware name.....)
+
+Middleware will be assigned to a specific route. The middleware can be registered at app/Http/Kernel.php.
+
+1. specific middleare
+	inlude in
+protected $routeMiddleware = [
+
+
+2. global 
+	
+
+To assign middleware to all routes within a group, you may use the middleware method before defining the group. Middleware are executed in the order they are listed in the array:
+
+Route::middleware(['first', 'second'])->group(function () {
+    Route::get('/', function () {
+        // Uses first & second Middleware
+    });
+
+    Route::get('user/profile', function () {
+        // Uses first & second Middleware
+    });
+});
+
+------------------------------------
+autometic auth creating
+
+php artisan make:auth
+
+
+------------------------------------------------------------
+
+	-------HTML Form------ 
+
+1. composer require illuminate/html    	(add HTML package to Laravel )
+
+  (config\app.php)
+
+	* in providers
+		  Illuminate\Html\HtmlServiceProvider::class,
+
+	** in aliases.....
+		'Form' => Illuminate\Html\FormFacade::class,
+        	'Html' => Illuminate\Html\HtmlFacade::class,
+
+
+
+-----------------------------------------------------------------------
+
+	---------Stripe account --------------
+
+1. add in composer.jsn ----require---->
+	"laravel/cashier": "~6.0"
+
+2. update composer
+
+3. app.php----> Illuminate\View\ViewServiceProvider::class,
+
+
+
+--------------------migration --------------------------
+
+1.  php artisan migration:reset             (delete the tables from database)
+2.  php artisan migration:refresh             (add new clloume to tables in database)
+3. php artisan make:migration rename_oldname_to_newname              (rename  tables in database)
+	--Schema::rename('posts', 'articles');  ---> up/down method a ata likhte hobe
+
+4.  php artisan make:migration add_live_and_post_on_field_to_the_articles_table --table=articles
+            (adding new field )
+
+--------------------------------
+
+key generator 
+
+php artisan key:generate   (.env generate hobe)
+
+
+
+-----------------------------
+
+To enable maintenance mode, simply execute the down Artisan command:
+
+php artisan down
+
+You may also provide message and retry options to the down command. The message value may be used to display or log a custom message, while the retry value will be set as the Retry-After HTTP header's value:
+
+php artisan down --message="Upgrading Database" --retry=60
+
+To disable maintenance mode, use the up command:
+
+php artisan up
+
+
+-------------------------------------------
+
+add global constraint
+
+in RouteServiceProvider.php
+
+  ex. 
+	public function boot()
+	{
+    		Route::pattern('id', '[0-9]+');
+
+    		parent::boot();
+	}
+
+----------------------------------------------
+
+route
+
+
+return redirect()->route('profile');
+
+
+
+
+
+
+
+
+
+------------------------------
+
+mutator diye 
+    passward encryption kora jay ata model respected attribute set method diye likhte hoy or 
+	respected controller database alue insert korar somoy releted function likhe kora jay
+
+
+  tuterial vedio no9
+
+accesor---  get method in model
+
+
+
+
+--------------------------------------------
+
+Virtual Host
+
+<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "C:\xampp\htdocs\project\timegrid\public"  =>( your project)
+    ServerName mytimegrid.me
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+</VirtualHost>
+
+
+paste this code in         C:\xampp\apache\conf\extra in httpd-vhosts
+-----------------------------------------------------------
+
+
+
