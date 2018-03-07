@@ -38,6 +38,10 @@ Local server:
 
 7. notepad text.txt     //opened by notepad
 
+
+
+		
+
 8. git status	//check its status
 
 9. git add name.txt		//add as truncked file
@@ -119,6 +123,20 @@ pull korar somay----------
    all do
 5. ok
 
-
+   **********Clone and installation of existing project*********************
+   
+   
+   1. git clone project_link.git
+   2. cd project_folder
+   3. create a database 
+   4. cp .env.example .env
+   5. php artisan key:generate
+   
+     now edit .env file for database connection
+   6. php artisan migrate
+   7. php artisan db:seed
+   8. php artisan serve
+   
+   	Go on browser and browse  http://localhost:8000/ . Its OK.
 
 
